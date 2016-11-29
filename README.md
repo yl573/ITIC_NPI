@@ -1,1 +1,0 @@
-# ITIC_NPI

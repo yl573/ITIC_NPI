@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{titleLabel}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-item>
+	  <ion-label>{{languageLabel}}</ion-label>
+	  <ion-select [(ngModel)]="language">
+	    <ion-option value="english">English</ion-option>
+	    <ion-option value="arabic">Arabic</ion-option>
+	    <ion-option value="kurdish">Kurdish</ion-option>
+	    <ion-option value="spanish">Spanish</ion-option>
+	    <ion-option value="german">German</ion-option>
+	    <ion-option value="greek">Greek</ion-option>
+	  </ion-select>
+	</ion-item>
+
+
+	<button ion-button block (click)="next()">{{nextLabel}}</button>
+</ion-content>
