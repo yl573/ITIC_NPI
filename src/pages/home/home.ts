@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 import { NavController} from 'ionic-angular';
-import { global } from '../../global/globalVariables.ts';
-import { Login } from '../Login/Login.ts';
+import { Global } from '../../providers/global';
+import { Login } from '../Login/Login';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -12,29 +12,46 @@ import 'rxjs/add/operator/map';
 })
 export class HomePage {
 
-  strings: any;
-  language: string = 'english';
-  //stringJSON = JSON.parse('strings.json');
-  titleLabel = 'Nurture Project International';
-  languageLabel = 'Language';
-  nextLabel = 'Next';
 
+  // A template for strings has to be provided or ionic wouldn't compile
+  // It would be nice if we can fix this
+  strings: any = {
+    "titleLabel" : "",
+    "languageLabel" : "",
+    "nextLabel" : "",
+    "languages" : {
+      "english" : "",
+      "arabic" : "",
+      "kurdish": "",
+      "spanish": "",
+      "german": "",
+      "greek": "" 
+    }     
+  };
+  language: string;
 
-  constructor(public navCtrl: NavController, public http:Http) {
-  	this.http.get('strings.json')
-      .map(this.processData);
+  constructor(public navCtrl: NavController, public http: Http, private global: Global) {
+    this.fillStrings();
   }
 
-  processData(data) {
-    // just some good 'ol JS fun with objects and arrays
-    // build up the data by linking speakers to sessions
-    this.strings = data.json();
-    console.log(this.strings);
+  onChange() {
+    console.log("Language changed");
+    this.global.setLanguage(this.language);
+    this.fillStrings();
   }
-
 
   next() {
-  	console.log(this.strings);
+  	console.log("entering login page");
   	this.navCtrl.push(Login);
   }
+
+  fillStrings() {
+    this.global.getStrings('home.json')
+    .then((str)=> {
+      this.strings = str;
+      console.log(str);
+    });
+  }
+
+
 }

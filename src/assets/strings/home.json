@@ -1,0 +1,15 @@
+{
+  "english" : {
+    "titleLabel" : "Nurture Project International",
+    "languageLabel" : "Language",
+    "nextLabel" : "Next",
+    "languages" : {
+      "english" : "English",
+      "arabic" : "Arabic",
+      "kurdish": "Kurdish",
+      "spanish": "Spanish",
+      "german": "German",
+      "greek": "Greek"      
+    }
+  }
+}

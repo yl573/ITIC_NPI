@@ -1,11 +1,35 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Login
+      {{strings.title}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  This is Login
+	<ion-list>
+
+		<ion-item>
+			<ion-label floating>{{strings.username}}</ion-label>
+			<ion-input type="text"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label floating>{{strings.password}}</ion-label>
+			<ion-input type="password"></ion-input>
+		</ion-item>
+
+	</ion-list>
+
+	<div padding>
+		<button ion-button block (click)="signIn()">{{strings.signin}}</button>
+	</div>
+
+	<div padding>
+		<button ion-button clear text-capitalize block (click)="forgot()">{{strings.forgotPassword}}</button>
+	</div>
+
+	<div padding>
+		<button ion-button clear text-capitalize block (click)="register()">{{strings.register}}</button>
+	</div>
 </ion-content>

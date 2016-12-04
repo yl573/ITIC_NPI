@@ -4,9 +4,11 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { HomePage } from '../pages/home/home';
 
+import { Global } from '../providers/global';
 
 @Component({
-  template: `<ion-nav [root]="rootPage"></ion-nav>`
+  template: `<ion-nav [root]="rootPage"></ion-nav>`,
+  providers: [Global]
 })
 export class MyApp {
   rootPage = HomePage;
@@ -20,4 +22,6 @@ export class MyApp {
     });
   }
 }
+
+
 

@@ -1,0 +1,10 @@
+{
+  "english" : {
+    "title": "Login",
+    "username": "Username",
+    "password": "Password",
+    "signin": "Sign In",
+    "register": "New user? Register here",
+    "forgotPassword": "Forgot username or password?"
+  }
+}

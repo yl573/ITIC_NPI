@@ -1,0 +1,21 @@
+<!--
+  Generated template for the MainMenu page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{strings.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <button ion-button block text-capitalize outline (click)="goto('about')">{{strings.about}}</button>
+  <button ion-button block text-capitalize outline (click)="goto('information')">{{strings.information}}</button>
+  <button ion-button block text-capitalize outline (click)="goto('resources')">{{strings.resources}}</button>
+  <button ion-button block text-capitalize outline (click)="goto('assessment')">{{strings.assessment}}</button>
+  <button ion-button block text-capitalize outline (click)="goto('contact')">{{strings.contact}}</button>
+</ion-content>

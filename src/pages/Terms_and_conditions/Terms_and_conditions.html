@@ -1,11 +1,18 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Terms and Conditions
+      {{strings.title}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  This is Terms_and_conditions
+  <div>{{strings.content}}</div>
+
+  <ion-item>
+    <ion-label>{{strings.doNotShow}}</ion-label>
+    <ion-checkbox [(ngModel)]="notShow"></ion-checkbox>
+  </ion-item>
+
+  <button ion-button block (click)="next()">{{strings.next}}</button>
 </ion-content>
