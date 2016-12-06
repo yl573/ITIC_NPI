@@ -28,6 +28,6 @@ export class Terms_and_conditions {
   next() {
   	if(this.notShow)
   		this.global.dont_show_tac();
-  	this.navCtrl.push(Main_menu);
+  	this.navCtrl.setRoot(Main_menu);
   }
 }

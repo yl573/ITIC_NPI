@@ -1,0 +1,83 @@
+{
+	"english": {
+		"label": "root",
+		"value": "Simple Rapid Assessment",
+		"children": [
+		{
+			"label": "Breastfed",
+			"value": "Feeding not age appropriate; Breastfeeding difficulties; Mother requests BMS; Infant is thin, lethargic or ill",
+			"children": [
+			{
+				"label": "Yes",
+				"value": "Detailed Assessment",
+				"children": [
+					{
+						"label": "Continue",
+						"value": "Is infant or mother malnourished or ill?",
+						"children": [
+							{
+								"label": "Yes",
+								"value": "Skilled breasfeeding support"
+							},
+							{
+								"label": "No",
+								"value": "Latch/position difficulties; Mother worried about breastfeeding; Discomfort or mild nipple pain; Feeding not age appropriate",
+								"children": [
+									{
+										"label": "Yes",
+										"value": "Basic Breastfeeding Support"
+									},
+									{
+										"label": "No",
+										"value": "Mother traumatised, in emotional crisis, or rejecting infant; Low birth weight babies; Infant visibily thin/underweight; Infant refusing to suckle; Severe or persistent nipple pain; Breast conditions",
+										"children": [
+											{
+												"label": "Yes",
+												"value": "Skilled breastfeeding support and weight monitoring"
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"label": "No",
+				"value": "Supportive Care"
+			}]
+		},
+		{
+			"label": "Not Breastfed",
+			"value": "Full Assessment",
+			"children": [
+			{
+				"label": "Continue",
+				"value": "Is relactation or wet nursing possible",
+				"children": [
+					{
+						"label": "No",
+						"value": "Artificial feeding support"
+					},
+					{
+						"label": "Yes",
+						"value": "Skilled Breastfeeding Support",
+						"children": [
+							{
+								"label": "Continue",
+								"value": "Infant is &lt;6 months old and: The infant is mixed fed and BMS is used temporarily while exclusive breastfeeding is re-established; The mother is relactating; The mother is ill and unable to breastfeed temporarily and wet nursing is not possible; The infant is ill and unable to suckle temporarily while the infant is treated medically; The infant is fed by a wetnurse",
+								"children": [
+									{
+										"label": "Yes",
+										"value": "Temporary Artificial Feeding Support"
+									}
+								]
+							}
+						]
+					}
+				]
+			}]
+		}]
+	}
+}

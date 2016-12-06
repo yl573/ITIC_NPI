@@ -1,0 +1,10 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>{{text}}</h1>
+  <button ion-button block text-capitalize *ngFor="let choice of choices; let i = index"  (click)="nextQuestion(i)">{{choice}}</button>
+</ion-content>
+

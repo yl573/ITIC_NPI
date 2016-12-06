@@ -1,9 +1,0 @@
-<ion-header>
-  <ion-navbar>
-  </ion-navbar>
-</ion-header>
-
-<ion-content>
-  <div>{{text}}</div>
-  <button *ngFor="let child of children" ion-button block text-capitalize (click)="nextQuestion(index)">{{child.label}}</button>
-</ion-content>

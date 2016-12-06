@@ -12,9 +12,9 @@ import { InformationPage } from '../pages/information/information';
 import { ResourcesPage } from '../pages/resources/resources';
 import { ContactPage } from '../pages/contact/contact';
 import { AssessmentPage } from '../pages/assessment/assessment';
+import { Question } from '../pages/question/question';
 
-import { TwentyfourPage } from '../pages/twentyfour/twentyfour';
-import { MisconceptionPage } from '../pages/Misconception/Misconception';
+import { TwentyfourPage } from '../pages/twentyfour/twentyfour';import { MisconceptionPage } from '../pages/Misconception/Misconception';
 import { LatchPage } from '../pages/latch/latch';
 import { ImportancePage } from '../pages/importance/importance';
 import { DietPage } from '../pages/diet/diet';
@@ -38,7 +38,8 @@ import { DietPage } from '../pages/diet/diet';
     MisconceptionPage,
     LatchPage,
     ImportancePage,
-    DietPage
+    DietPage,
+    Question
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -60,7 +61,8 @@ import { DietPage } from '../pages/diet/diet';
     MisconceptionPage,
     LatchPage,
     ImportancePage,
-    DietPage
+    DietPage,
+    Question
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

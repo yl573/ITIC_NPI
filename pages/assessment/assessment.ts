@@ -1,87 +1,44 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { TreeManager } from './tree';
 
-//import { ModalController } from 'ionic-angular';
-//import { ModalPage } from './modal-page';
+import { Question } from '../question/question';
+
+import { Global } from '../../providers/global';
 
 
-
-/*
-  Generated class for the Assessment page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-assessment',
   templateUrl: 'assessment.html'
 })
 export class AssessmentPage {
 
-		test = {
-		'value': 'hello',
-		'label': 'root',
-		'children': [
-		{
-			'value': 'yo',
-			'label': 'yes',
-			'children': [
-			{
-				'value': 'bomba',
-				'label': 'yes'
-			},
-			{
-				'value': 'blublu',
-				'label': 'no'
-			}]
-		},
-		{
-			'value': 'jiju',
-			'label': 'yes',
-			'children': [
-			{
-				'value': 'turtle',
-				'label': 'yes'
-			},
-			{
-				'value': 'poopoo',
-				'label': 'no'
-			}]
-		}]
-	};
+	strings: any = {
+		"title": "hi",
+		"info": "",
+		"start": ""
+	}
 
 	tree: any;
 
-  constructor(public navCtrl: NavController) {
-  	this.tree = new TreeManager(this.test);
-  	console.log(this.tree.root);
+  constructor(public navCtrl: NavController, private global: Global) {
+  	this.global.getStrings('assessment.json')
+    .then((str)=> {
+      this.strings = str;
+      console.log('get :)');
+    })
+    .then(()=>this.global.getStrings('tree.json'))
+    .then((str)=> {
+    	console.log(str);
+      this.tree = new TreeManager(str);
+      console.log(this.tree.root);
+    });
   }
 
-	nextQuestion(index = null) {
-		if(index != null)
-			this.tree.goToChild(index);
-		var newQuestion = new question(this.tree.currentNode);
-		this.navCtrl.push(newQuestion);
+	start() {
+		this.navCtrl.push(Question, this.tree.root);
 	}
 
 }
 
-@Component({
-  templateUrl: 'question.html'
-})
-class question {
-	text: string = '';
-	choices: string[] = [];
-	constructor(node) {
-		console.log('constructor called');
-		console.log('node: ');
-		console.log(node.children);
-		this.text = node['value'];
-		node['children'].foreach((child) => {
-			this.choices.push(child['label']);
-		});
-
-	}
-}

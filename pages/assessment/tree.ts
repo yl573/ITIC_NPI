@@ -6,6 +6,7 @@ export class TreeManager {
 	constructor(jsonObj: any) {
 		this.root = this.parseObjToTree(jsonObj);
 		this.currentNode = this.root;
+		return this;
 	}
 
 	parseObjToTree(jsonObj) {
@@ -35,6 +36,7 @@ class node {
     value: any;
     label: string;
     children: node[] = [];
+
     constructor(val, lab) {
         this.value = val;
         this.label = lab;

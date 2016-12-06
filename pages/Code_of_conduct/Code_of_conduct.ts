@@ -34,6 +34,6 @@ export class Code_of_conduct {
   	if(this.global.show_tac)
   		this.navCtrl.push(Terms_and_conditions);
   	else
-  		this.navCtrl.push(Main_menu);
+  		this.navCtrl.setRoot(Main_menu);
   }
 }
