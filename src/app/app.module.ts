@@ -13,6 +13,12 @@ import { ResourcesPage } from '../pages/resources/resources';
 import { ContactPage } from '../pages/contact/contact';
 import { AssessmentPage } from '../pages/assessment/assessment';
 
+import { TwentyfourPage } from '../pages/twentyfour/twentyfour';
+import { MisconceptionPage } from '../pages/Misconception/Misconception';
+import { LatchPage } from '../pages/latch/latch';
+import { ImportancePage } from '../pages/importance/importance';
+import { DietPage } from '../pages/diet/diet';
+
 
 
 @NgModule({
@@ -27,7 +33,12 @@ import { AssessmentPage } from '../pages/assessment/assessment';
     InformationPage,
     ResourcesPage,
     ContactPage,
-    AssessmentPage
+    AssessmentPage,
+    TwentyfourPage,
+    MisconceptionPage,
+    LatchPage,
+    ImportancePage,
+    DietPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -44,7 +55,12 @@ import { AssessmentPage } from '../pages/assessment/assessment';
     InformationPage,
     ResourcesPage,
     ContactPage,
-    AssessmentPage
+    AssessmentPage,
+    TwentyfourPage,
+    MisconceptionPage,
+    LatchPage,
+    ImportancePage,
+    DietPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

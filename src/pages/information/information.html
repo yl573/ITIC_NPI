@@ -5,14 +5,16 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>information</ion-title>
+    <ion-title>{{strings.title}}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
-
+  <button ion-button block text-capitalize outline (click)="goto('twentyfour')">{{strings.twentyfour}}</button>
+  <button ion-button block text-capitalize outline (click)="goto('latch')">{{strings.latch}}</button>
+  <button ion-button block text-capitalize outline (click)="goto('diet')">{{strings.diet}}</button>
+  <button ion-button block text-capitalize outline (click)="goto('misconception')">{{strings.misconception}}</button>
+  <button ion-button block text-capitalize outline (click)="goto('importance')">{{strings.importance}}</button>
 </ion-content>
